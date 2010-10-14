@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.randomnoun.build</groupId>
+    <artifactId>parent-pom</artifactId>
+    <name>Parent POM of randomnoun projects</name>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <scm>
+        <connection>scm:cvs:pserver:cvs.dev.randomnoun:/randomnoun/parent-pom</connection>
+        <developerConnection>scm:cvs:pserver:cvs.dev.randomnoun:/randomnoun/parent-pom</developerConnection>
+    </scm>
+    
+    <dependencyManagement>
+      <dependencies>
+	    <dependency>
+	        <groupId>com.randomnoun.common</groupId>
+	        <artifactId>common</artifactId>
+	        <version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	  </dependencies>      
+    </dependencyManagement>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <!-- 
+            <plugin>
+                <artifactId>maven-betfair-release-plugin</artifactId>
+                <configuration>
+                    <tagBase>//depot/se/development/release/</tagBase>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+            -->             
+        </plugins>
+        <!-- 
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav</artifactId>
+            </extension>
+        </extensions>
+         -->
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>randomnoun releases</name>
+            <url>http://nexus.dev.randomnoun:8082/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>randomnoun snapshots</name>
+            <url>http://nexus.dev.randomnoun:8082/nexus/content/repositories/snapshots/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <targetJdk>1.5</targetJdk>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.5</jdk.version>
+        <!-- targetJdk prop required for PMD (even though it has its own targetJdk 
+            config element) -->
+        <targetJdk>1.5</targetJdk>
+    </properties>
+
+
+</project>
