@@ -6,8 +6,8 @@
     <version>0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <scm>
-        <connection>scm:cvs:pserver:anonymous:cvs.dev.randomnoun:/randomnoun:parent-pom</connection>
-        <developerConnection>scm:cvs:pserver:anonymous:cvs.dev.randomnoun:/randomnoun:parent-pom</developerConnection>
+        <connection>scm:cvs:pserver:anonymous:@cvs.dev.randomnoun:/randomnoun:parent-pom</connection>
+        <developerConnection>scm:cvs:pserver:anonymous:@cvs.dev.randomnoun:/randomnoun:parent-pom</developerConnection>
     </scm>
     
     <dependencyManagement>
