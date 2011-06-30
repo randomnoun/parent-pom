@@ -8,15 +8,27 @@
     <scm>
         <connection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</connection>
         <developerConnection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</developerConnection>
-  </scm>
+    </scm>
+    <!--  
+    Hello me.
     
+    Conventions for the use of this file are that only external dependencies
+    (i.e. those not built through the mvn/bamboo/vmaint process) go in here.
+    
+    This is because either I keep updating this whenever I, say, bump the 
+    com.randomnoun.common SNAPSHOT up a version, 
+    which means bumping this parent-pom up a version, which means bumping
+    every subproject's parent reference up a version, which is, frankly, ridiculous,
+    and defies the whole point of having a parent pom.xml in the first place.
+
+    At least this way I won't (hopefully) have 15 different versions of log4j 
+    in each app server.
+    
+    So, anyway, in short, don't put any SNAPSHOT versions in here. Because it's
+    just going to be a pain in the long term.
+     -->
     <dependencyManagement>
       <dependencies>
-	    <dependency>
-	        <groupId>com.randomnoun.common</groupId>
-	        <artifactId>common</artifactId>
-	        <version>0.0.1-SNAPSHOT</version>
-	    </dependency>
 
       <!--  default version numbers -->	  
 	  <dependency>
