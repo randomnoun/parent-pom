@@ -3,12 +3,11 @@
     <groupId>com.randomnoun.build</groupId>
     <artifactId>parent-pom</artifactId>
     <name>Parent POM of randomnoun projects</name>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <scm>
         <connection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</connection>
         <developerConnection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</developerConnection>
-      <tag>parent-pom-1_0</tag>
   </scm>
     <!--  
     Hello me.
