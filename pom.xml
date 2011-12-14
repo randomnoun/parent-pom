@@ -211,6 +211,43 @@
             </plugin>
             -->             
         </plugins>
+        
+        <pluginManagement>
+        <plugins>
+        <!--  to remove things like this in eclipse:
+         Plugin execution not covered by lifecycle configuration: 
+         org.apache.maven.plugins:maven-resources-plugin:2.4.3:resources 
+         (execution: default-resources, phase: process-resources)   
+         pom.xml /something-web    line 7  Maven Project Build Lifecycle Mapping Problem
+         -->
+        <plugin>
+      <groupId>org.eclipse.m2e</groupId>
+      <artifactId>lifecycle-mapping</artifactId>
+      <version>1.0.0</version>
+      <configuration>
+        <lifecycleMappingMetadata>
+          <pluginExecutions>
+            <pluginExecution>
+              <pluginExecutionFilter>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <versionRange>2.4.3</versionRange>
+                <goals>
+                  <goal>resources</goal>
+                  <goal>testResources</goal>
+                </goals>
+              </pluginExecutionFilter>
+              <action>
+                <ignore />
+              </action>
+            </pluginExecution>
+          </pluginExecutions>
+        </lifecycleMappingMetadata>
+      </configuration>
+    </plugin>
+    </plugins>  
+        </pluginManagement>
+        
         <!-- 
         <extensions>
             <extension>
@@ -250,10 +287,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.5</jdk.version>
+        <jdk.version>1.6</jdk.version>
         <!-- targetJdk prop required for PMD (even though it has its own targetJdk 
             config element) -->
-        <targetJdk>1.5</targetJdk>
+        <targetJdk>1.6</targetJdk>
     </properties>
 
 
