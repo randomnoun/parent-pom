@@ -308,7 +308,7 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
-                    <targetJdk>1.7</targetJdk>
+                    <targetJdk>1.6</targetJdk>
                 </configuration>
             </plugin>
         </plugins>
@@ -316,10 +316,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.6</jdk.version>
         <!-- targetJdk prop required for PMD (even though it has its own targetJdk 
             config element) -->
-        <targetJdk>1.7</targetJdk>
+        <targetJdk>1.6</targetJdk>
     </properties>
 
 
