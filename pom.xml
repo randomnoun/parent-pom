@@ -39,7 +39,7 @@
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.15</version>
+            <version>1.2.17</version>
             <exclusions>
               <!-- should be optional -->
               <exclusion>
@@ -107,13 +107,13 @@
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
-            <version>2.1</version>
+            <version>2.2</version><!--  tomcat 7 = jsp api 2.2 ; see http://tomcat.apache.org/whichversion.html -->
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>gnu</groupId>
             <artifactId>getopt</artifactId>
-            <version>1.0.12</version>
+            <version>1.0.13</version>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
@@ -314,7 +314,7 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
-                    <targetJdk>1.6</targetJdk>
+                    <targetJdk>1.7</targetJdk>
                 </configuration>
             </plugin>
         </plugins>
@@ -322,10 +322,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.6</jdk.version>
+        <jdk.version>1.7</jdk.version>
         <!-- targetJdk prop required for PMD (even though it has its own targetJdk 
             config element) -->
-        <targetJdk>1.6</targetJdk>
+        <targetJdk>1.7</targetJdk>
     </properties>
 
 
