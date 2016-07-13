@@ -4,7 +4,7 @@
     <groupId>com.randomnoun.build</groupId>
     <artifactId>parent-pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.13-SNAPSHOT</version>
+    <version>1.13</version>
     <description>Parent POM of randomnoun projects</description>
 	<url>http://code.randomnoun.com/parent-pom/index.html</url>
 	<inceptionYear>2010</inceptionYear>
@@ -226,7 +226,8 @@
 	    <url>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</url>
         <connection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</connection>
         <developerConnection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</developerConnection>
-    </scm>
+      <tag>parent-pom-1_13</tag>
+  </scm>
     <licenses>
 		<license>
 			<name>Simplified BSD License</name>
