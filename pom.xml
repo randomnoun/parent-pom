@@ -1,10 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
     <groupId>com.randomnoun.build</groupId>
     <artifactId>parent-pom</artifactId>
-    <name>Parent POM of randomnoun projects</name>
-    <version>1.13-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <version>1.12-SNAPSHOT</version>
+    <description>Parent POM of randomnoun projects</description>
+	<url>http://code.randomnoun.com/parent-pom/index.html</url>
+	<inceptionYear>2010</inceptionYear>
     
     <!--  
     Hello me.
@@ -220,9 +223,18 @@
 		<!-- m2e pluginManagement now in settings.xml -->        
     </build>
 	<scm>
+	    <url>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</url>
         <connection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</connection>
         <developerConnection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</developerConnection>
-  </scm>
+    </scm>
+    <licenses>
+		<license>
+			<name>Simplified BSD License</name>
+			<url>http://www.randomnoun.com/licences/bsd-simplified.txt</url>
+			<distribution>repo</distribution>
+			<comments>Simplified BSD License (BSD 2-clause license).</comments>
+		</license>
+	</licenses>
     <distributionManagement>
         <repository>
             <id>releases</id>
