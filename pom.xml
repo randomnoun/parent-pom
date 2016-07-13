@@ -4,7 +4,7 @@
     <groupId>com.randomnoun.build</groupId>
     <artifactId>parent-pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.12-SNAPSHOT</version>
+    <version>1.13-SNAPSHOT</version>
     <description>Parent POM of randomnoun projects</description>
 	<url>http://code.randomnoun.com/parent-pom/index.html</url>
 	<inceptionYear>2010</inceptionYear>
