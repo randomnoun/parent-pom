@@ -5,10 +5,7 @@
     <name>Parent POM of randomnoun projects</name>
     <version>1.12-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <scm>
-        <connection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</connection>
-        <developerConnection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</developerConnection>
-  </scm>
+    
     <!--  
     Hello me.
     
@@ -222,7 +219,10 @@
 
 		<!-- m2e pluginManagement now in settings.xml -->        
     </build>
-
+	<scm>
+        <connection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</connection>
+        <developerConnection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</developerConnection>
+    </scm>
     <distributionManagement>
         <repository>
             <id>releases</id>
