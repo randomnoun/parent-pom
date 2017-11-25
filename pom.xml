@@ -352,8 +352,46 @@
             </plugin>
         </plugins>
 
-		<!-- m2e pluginManagement now in settings.xml -->        
+		<!-- move m2e pluginManagement to settings.xml ? -->        
+	    <pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											javacc-maven-plugin
+										</artifactId>
+										<versionRange>
+											[2.5,)
+										</versionRange>
+										<goals>
+											<goal>jtb-javacc</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
     </build>
+    
+    
 	<scm>
 	    <url>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</url>
         <connection>scm:cvs:pserver:vmaint:vmaint@cvs.dev.randomnoun:/randomnoun:parent-pom</connection>
