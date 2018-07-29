@@ -395,7 +395,7 @@
 	<scm>
   	    <connection>scm:git:ssh://git@gitlab.dev.randomnoun:2222/randomnoun/parent-pom.git</connection>
 		<developerConnection>scm:git:ssh://git@gitlab.dev.randomnoun:2222/randomnoun/parent-pom.git</developerConnection>
-		<url>http://gitlab.dev.randomonun/randomnoun/parent-pom</url>
+		<url>http://gitlab.dev.randomnoun/randomnoun/parent-pom</url>
     </scm>
     <licenses>
 		<license>
