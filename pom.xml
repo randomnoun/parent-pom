@@ -5,7 +5,7 @@
     <groupId>com.randomnoun.build</groupId>
     <artifactId>parent-pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.20-SNAPSHOT</version>
+    <version>1.20</version>
     <description>Parent POM of randomnoun projects</description>
 	<url>http://code.randomnoun.com/parent-pom/index.html</url>
 	<inceptionYear>2010</inceptionYear>
@@ -348,50 +348,61 @@
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
+                    
                 </configuration>
             </plugin>
         </plugins>
-
-		<!-- move m2e pluginManagement to settings.xml ? -->        
-	    <pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.codehaus.mojo
-										</groupId>
-										<artifactId>
-											javacc-maven-plugin
-										</artifactId>
-										<versionRange>
-											[2.5,)
-										</versionRange>
-										<goals>
-											<goal>jtb-javacc</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
     </build>
     
-    
+    <profiles>
+	    <profile>
+			  <id>only-eclipse</id>
+			  <activation>
+			    <property>
+			      <name>m2e.version</name>
+			    </property>
+			  </activation>
+			  <build>
+					<!-- move m2e pluginManagement to settings.xml ? -->        
+				    <pluginManagement>
+						<plugins>
+							<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+							<plugin>
+								<groupId>org.eclipse.m2e</groupId>
+								<artifactId>lifecycle-mapping</artifactId>
+								<version>1.0.0</version>
+								<configuration>
+									<lifecycleMappingMetadata>
+										<pluginExecutions>
+											<pluginExecution>
+												<pluginExecutionFilter>
+													<groupId>
+														org.codehaus.mojo
+													</groupId>
+													<artifactId>
+														javacc-maven-plugin
+													</artifactId>
+													<versionRange>
+														[2.5,)
+													</versionRange>
+													<goals>
+														<goal>jtb-javacc</goal>
+													</goals>
+												</pluginExecutionFilter>
+												<action>
+													<ignore />
+												</action>
+											</pluginExecution>
+										</pluginExecutions>
+									</lifecycleMappingMetadata>
+								</configuration>
+							</plugin>
+						</plugins>
+					</pluginManagement>			  
+			  </build>
+	    </profile>
+    </profiles>
+		  
 	<scm>
   	    <connection>scm:git:ssh://git@gitlab.dev.randomnoun:2222/randomnoun/parent-pom.git</connection>
 		<developerConnection>scm:git:ssh://git@gitlab.dev.randomnoun:2222/randomnoun/parent-pom.git</developerConnection>
