@@ -3,7 +3,7 @@
     
     <groupId>com.randomnoun.build</groupId>
     <artifactId>parent-pom</artifactId>
-    <version>1.22-SNAPSHOT</version>
+    <version>1.22</version>
     <packaging>pom</packaging>
     
     <name>parent-pom</name>
@@ -361,7 +361,8 @@
   	    <connection>scm:git:ssh://git@gitlab.dev.randomnoun:2222/randomnoun/parent-pom.git</connection>
 		<developerConnection>scm:git:ssh://git@gitlab.dev.randomnoun:2222/randomnoun/parent-pom.git</developerConnection>
 		<url>http://gitlab.dev.randomnoun/randomnoun/parent-pom</url>
-    </scm>
+      <tag>parent-pom-1.22</tag>
+  </scm>
     <licenses>
 		<license>
 			<name>Simplified BSD License</name>
