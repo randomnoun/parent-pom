@@ -249,8 +249,8 @@
        	 	</dependency>
 			
 			<dependency>
-				<groupId>commons-dbcp</groupId>
-				<artifactId>commons-dbcp</artifactId>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-dbcp2</artifactId>
 				<version>2.9.0</version>
 			</dependency>
 			<dependency>
