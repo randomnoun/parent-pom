@@ -10,6 +10,14 @@
     <description>Parent POM of randomnoun projects</description>
 	<url>https://github.com/randomnoun/parent-pom</url>
 	<inceptionYear>2010</inceptionYear>
+
+
+    <properties>
+        <jdk.version>11</jdk.version>
+        <targetJdk>${jdk.version}</targetJdk><!-- required for PMD  -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <org.springframework.version>5.3.22</org.springframework.version>
+    </properties>
     
     <!--
     Hello me.
@@ -182,19 +190,16 @@
 			    <scope>test</scope>
 			</dependency>
 						
+		    <!-- was commons-httpclient:commons-httpclient:3.1 
+		         see https://blog.teamextension.com/migrating-from-httpclient-3-1-to-4-0-34
+		         to migrate -->
 			<dependency>
-				<groupId>commons-httpclient</groupId>
-				<artifactId>commons-httpclient</artifactId>
-				<version>3.1</version>
-				<exclusions>
-					<exclusion>
-						<!-- should be at test scope, but included at compile scope -->
-						<groupId>junit</groupId>
-						<artifactId>junit</artifactId>
-					</exclusion>
-				</exclusions>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>4.5.13</version>
 			</dependency>
 
+            <!-- should probably replace this with JSoup these days -->
 			<dependency>
 				<groupId>org.ccil.cowan.tagsoup</groupId>
 				<artifactId>tagsoup</artifactId>
@@ -204,41 +209,42 @@
 				<groupId>xalan</groupId>
 				<artifactId>xalan</artifactId>
 				<version>2.7.2</version>
-			<exclusions>
-				<exclusion>
-					<groupId>xml-apis</groupId>
-					<artifactId>xml-apis</artifactId>
-				</exclusion>
-			</exclusions>
+    			<exclusions>
+    				<exclusion>
+    					<groupId>xml-apis</groupId>
+    					<artifactId>xml-apis</artifactId>
+    				</exclusion>
+    			</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>xerces</groupId>
 				<artifactId>xercesImpl</artifactId>
 				<version>2.12.2</version>
-			<exclusions>
-				<exclusion>
-					<groupId>xml-apis</groupId>
-					<artifactId>xml-apis</artifactId>
-				</exclusion>
-			</exclusions>
+    			<exclusions>
+    				<exclusion>
+    					<groupId>xml-apis</groupId>
+    					<artifactId>xml-apis</artifactId>
+    				</exclusion>
+    			</exclusions>
 			</dependency>
 			
+			<!-- was javax.mail:mail:1.4.1 -->
 			<dependency>
-				<groupId>javax.mail</groupId>
-				<artifactId>mail</artifactId>
-				<version>1.4.1</version>
+				<groupId>jakarta.mail</groupId>
+				<artifactId>jakarta.mail-api</artifactId> <!-- who puts a full stop in an artifactId ? -->
+				<version>2.1.0</version>
 			</dependency>
 			
 			<dependency>
 				<groupId>net.java.dev.jna</groupId>
 				<artifactId>jna</artifactId>
-				<version>5.11.0</version><!--  was 4.2.2 -->
+				<version>5.12.1</version><!--  was 5.11.0 -->
 				<optional>true</optional>
 			</dependency>
 			<dependency>
 				<groupId>net.java.dev.jna</groupId>
 				<artifactId>jna-platform</artifactId>
-				<version>5.11.0</version><!--  was 4.2.2 -->
+				<version>5.12.1</version><!--  was 5.11.0 -->
 				<optional>true</optional>
 			</dependency>
 			
@@ -248,11 +254,14 @@
            		<version>1.8.0</version>
        	 	</dependency>
 			
+			<!-- removed since I'm mostly using c3p0 these days
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-dbcp2</artifactId>
 				<version>2.9.0</version>
 			</dependency>
+			-->
+			
 			<dependency>
 				<groupId>com.mchange</groupId>
 				<artifactId>c3p0</artifactId>
@@ -624,14 +633,5 @@
             </plugin>
         </plugins>
     </reporting>
-
-    <properties>
-        <jdk.version>11</jdk.version>
-        <targetJdk>${jdk.version}</targetJdk><!-- required for PMD  -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        
-        <org.springframework.version>5.3.18</org.springframework.version>
-    </properties>
-
 
 </project>
