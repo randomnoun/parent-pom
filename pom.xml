@@ -198,6 +198,12 @@
 				<artifactId>httpclient</artifactId>
 				<version>4.5.13</version>
 			</dependency>
+			<!-- bump commons-codec (used in httpcomponents) from 1.11 -> 1.15 -->
+			<dependency> 
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.15</version>
+            </dependency>
 
             <!-- should probably replace this with JSoup these days -->
 			<dependency>
