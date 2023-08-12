@@ -13,7 +13,7 @@
 
 
     <properties>
-        <jdk.version>11</jdk.version>
+        <jdk.version>17</jdk.version>
         <targetJdk>${jdk.version}</targetJdk><!-- required for PMD  -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <org.springframework.version>5.3.29</org.springframework.version>
@@ -369,7 +369,7 @@
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-javadoc-plugin</artifactId>
-							<version>3.2.0</version>
+							<version>3.5.0</version>
 							<!-- 
 							  this configuration is used during the javadoc:jar goal during the release
 							  configuration for the reports is in the <reporting> section  
@@ -403,13 +403,13 @@
 		            <plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>3.2.0</version>
+						<version>3.5.0</version>
 						<!-- 
 						  this configuration is used during the site:site goal during the release
 						  configuration for the javadoc artifact is in the <pluginManagement> section  
 						-->
 						<configuration>
-							<source>8</source>
+							<source>17</source>
 							<failOnError>false</failOnError>
 							<stylesheetfile>${project.basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
 							<javadocDirectory>${project.basedir}/src/main/javadoc</javadocDirectory>
@@ -452,7 +452,7 @@
 					<plugin>
 		                <groupId>org.apache.maven.plugins</groupId>
 		                <artifactId>maven-pmd-plugin</artifactId>
-		                <version>3.14.0</version>
+		                <version>3.21.0</version>
 		                <configuration>
 		                    <targetJdk>${jdk.version}</targetJdk>
 		                </configuration>
