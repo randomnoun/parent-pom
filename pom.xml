@@ -296,7 +296,7 @@
 	            <plugin>
 	                <groupId>org.apache.maven.plugins</groupId>
 	                <artifactId>maven-compiler-plugin</artifactId>
-	                <version>3.5.1</version>
+	                <version>3.11.0</version>
 	                <configuration>
 	                    <source>${jdk.version}</source>
 	                    <target>${jdk.version}</target>
@@ -305,12 +305,12 @@
 	            <plugin>
 			        <groupId>org.apache.maven.plugins</groupId>
 			        <artifactId>maven-site-plugin</artifactId>
-			        <version>3.8.2</version>
+			        <version>3.12.0</version>
 			    </plugin>
 		        <plugin>
 			        <groupId>org.apache.maven.plugins</groupId>
 			        <artifactId>maven-project-info-reports-plugin</artifactId>
-			        <version>3.0.0</version>
+			        <version>3.4.5</version>
 				</plugin>
 				<plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -392,7 +392,7 @@
 					<plugin>
 		                <groupId>org.apache.maven.plugins</groupId>
 		                <artifactId>maven-project-info-reports-plugin</artifactId>
-		                <version>2.9</version>
+		                <version>3.4.5</version>
 		                <configuration>
 				          <webAccessUrl>https://github.com/randomnoun/${project.name}</webAccessUrl>
 				          <anonymousConnection>scm:git:ssh://git@github.com:randomnoun/${project.name}.git</anonymousConnection>
@@ -416,9 +416,6 @@
 							<docfilessubdirs>true</docfilessubdirs>
 							<author>true</author>
 							<linksource>true</linksource>
-							<additionalOptions>
-								--frames
-							</additionalOptions>
 						</configuration>
 						<reportSets>
 							<reportSet>
@@ -442,7 +439,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jxr-plugin</artifactId>
-						<version>2.5</version>
+						<version>3.3.0</version>
 						<configuration>
 							<linkJavadoc>true</linkJavadoc>
 							<javadocDir>target/site/apidocs</javadocDir> 
@@ -632,7 +629,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.16.0</version>
+                <version>3.21.0</version>
                 <configuration>
                     <targetJdk>${jdk.version}</targetJdk>
                 </configuration>
