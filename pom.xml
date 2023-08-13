@@ -44,14 +44,14 @@
 			<dependency>
 	            <groupId>org.apache.logging.log4j</groupId>
 	            <artifactId>log4j-core</artifactId>
-	            <version>2.17.2</version><!--  2.12.1 was last version to support jdk7, latest is 2.16.0 -->
+	            <version>2.20.0</version><!--  2.12.1 was last version to support jdk7, latest is 2.16.0 -->
 	        </dependency>
 	
 	        <!-- keep the log4j 1 interfaces as some downstream projects still use log4j 1 appenders -->
 	        <dependency>
 	        	<groupId>org.apache.logging.log4j</groupId>
 	            <artifactId>log4j-1.2-api</artifactId>
-	            <version>2.17.2</version><!--  2.12.1 was last version to support jdk7, latest is 2.16.0 -->
+	            <version>2.20.0</version><!--  2.12.1 was last version to support jdk7, latest is 2.16.0 -->
 	        </dependency>
 
 			<dependency>
@@ -222,6 +222,11 @@
     				</exclusion>
     			</exclusions>
 			</dependency>
+            <dependency>
+                <groupId>xalan</groupId>
+                <artifactId>serializer</artifactId>
+                <version>2.7.3</version>
+            </dependency>			
 			<dependency>
 				<groupId>xerces</groupId>
 				<artifactId>xercesImpl</artifactId>
@@ -317,6 +322,25 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.3.1</version>
                 </plugin>
+                
+                <plugin>
+                    <groupId>com.ragedunicorn.tools.maven</groupId>
+                    <artifactId>github-release-maven-plugin</artifactId>
+                    <version>1.0.6</version>
+                    <executions>
+                      <execution>
+                        <id>default-cli</id>
+                        <configuration>
+                          <owner>randomnoun</owner>
+                          <repository>${project.artifactId}</repository>
+                          <server>github-release-token</server>
+                          <tagName>v${project.version}</tagName>
+                          <name>v${project.version}</name>
+                          <releaseNotes>src/site/release-notes.md</releaseNotes>
+                        </configuration>
+                      </execution>
+                    </executions>
+                </plugin>    
 	        </plugins>
 	    </pluginManagement>
 	</build>    
@@ -338,7 +362,7 @@
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-site-plugin</artifactId>
-							<version>3.3</version>
+							<version>3.12.0</version>
 							<dependencies>
 								<dependency>
 									<groupId>lt.velykis.maven.skins</groupId>
@@ -598,17 +622,6 @@
 			</properties>
 		</developer>
 	</developers>
-	
-	<mailingLists>
-		<mailingList>
-			<name>${project.name} Mailing List</name>
-			<subscribe>${project.name}-subscribe@lists.randomnoun.com</subscribe>
-			<unsubscribe>${project.name}-unsubscribe@lists.randomnoun.com</unsubscribe>
-			<post>${project.name}@lists.randomnoun.com</post>
-			<archive>http://lists.randomnoun.com/pipermail/${project.name}/</archive>
-		</mailingList>
-	</mailingLists>
-	
 	
     <distributionManagement>
         <repository>
