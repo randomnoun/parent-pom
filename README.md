@@ -1,3 +1,5 @@
+[![Maven Central](https://img.shields.io/maven-central/v/com.randomnoun.build/parent-pom.svg)](https://search.maven.org/artifact/com.randomnoun.build/parent-pom)
+
 # parent-pom
 
 **parent-pom** is the parent pom for randomnoun maven projects
