@@ -16,20 +16,20 @@
         <jdk.version>17</jdk.version>
         <targetJdk>${jdk.version}</targetJdk><!-- required for PMD  -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.springframework.version>5.3.29</org.springframework.version>
+        <org.springframework.version>5.3.39</org.springframework.version>
     </properties>
     
     <!--
     Hello me.
 
     Conventions for the use of this file are that only external dependencies
-    (i.e. those not built through the mvn/bamboo/vmaint process) go in here.
+    (i.e. those not built through the mvn/gitlab/vmaint process) go in here.
     
     At least this way I won't (hopefully) have 15 different versions of log4j 
     in each app server.
     
     So, anyway, don't put any SNAPSHOT versions in here, and don't put any
-    dependencies that are built through gitlab / bamboo.
+    dependencies that are built through gitlab.
      -->
     <dependencyManagement>
 		<dependencies>
@@ -265,14 +265,6 @@
            		<version>1.8.0</version>
        	 	</dependency>
 			
-			<!-- removed since I'm mostly using c3p0 these days
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-dbcp2</artifactId>
-				<version>2.9.0</version>
-			</dependency>
-			-->
-			
 			<dependency>
 				<groupId>com.mchange</groupId>
 				<artifactId>c3p0</artifactId>
@@ -287,7 +279,7 @@
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
-				<version>2.13.0</version><!--  was 2.11.0 -->
+				<version>2.18.0</version><!--  was 2.11.0 -->
 			</dependency>
 			
 		</dependencies>
@@ -326,7 +318,7 @@
                 <plugin>
                     <groupId>com.ragedunicorn.tools.maven</groupId>
                     <artifactId>github-release-maven-plugin</artifactId>
-                    <version>1.0.6</version>
+                    <version>1.0.7</version>
                     <executions>
                       <execution>
                         <id>default-cli</id>
@@ -336,6 +328,7 @@
                           <server>github-release-token</server>
                           <tagName>v${project.version}</tagName>
                           <name>v${project.version}</name>
+                          <targetCommitish>main</targetCommitish>
                           <releaseNotes>src/site/release-notes.md</releaseNotes>
                         </configuration>
                       </execution>
