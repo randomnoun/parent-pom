@@ -1,4 +1,4 @@
 ## Updates
 
-* First github release
 * Update dependencies
+* Release branch property
