@@ -3,7 +3,7 @@
     
     <groupId>com.randomnoun.build</groupId>
     <artifactId>parent-pom</artifactId>
-    <version>1.31</version>
+    <version>1.32-SNAPSHOT</version>
     <packaging>pom</packaging>
     
     <name>parent-pom</name>
@@ -585,7 +585,7 @@
 		<connection>scm:git:http://gitlab.dev.randomnoun/randomnoun/parent-pom.git</connection>
 		<developerConnection>scm:git:http://gitlab.dev.randomnoun/randomnoun/parent-pom.git</developerConnection>
 		<url>http://gitlab.dev.randomnoun/randomnoun/parent-pom</url>
-    <tag>parent-pom-1.31</tag>
+    <tag>parent-pom-1.26</tag>
   </scm>
     <licenses>
 		<license>
