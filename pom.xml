@@ -17,6 +17,7 @@
         <targetJdk>${jdk.version}</targetJdk><!-- required for PMD  -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <org.springframework.version>5.3.39</org.springframework.version>
+        <github.release.targetCommitish>master</github.release.targetCommitish><!-- main or master -->
     </properties>
     
     <!--
@@ -44,14 +45,14 @@
 			<dependency>
 	            <groupId>org.apache.logging.log4j</groupId>
 	            <artifactId>log4j-core</artifactId>
-	            <version>2.20.0</version><!--  2.12.1 was last version to support jdk7, latest is 2.16.0 -->
+	            <version>2.24.3</version><!--  2.12.1 was last version to support jdk7, latest is 2.16.0 -->
 	        </dependency>
 	
 	        <!-- keep the log4j 1 interfaces as some downstream projects still use log4j 1 appenders -->
 	        <dependency>
 	        	<groupId>org.apache.logging.log4j</groupId>
 	            <artifactId>log4j-1.2-api</artifactId>
-	            <version>2.20.0</version><!--  2.12.1 was last version to support jdk7, latest is 2.16.0 -->
+	            <version>2.24.3</version><!--  2.12.1 was last version to support jdk7, latest is 2.16.0 -->
 	        </dependency>
 
 			<dependency>
@@ -196,13 +197,13 @@
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
-				<version>4.5.13</version>
+				<version>4.5.14</version>
 			</dependency>
 			<!-- bump commons-codec (used in httpcomponents) from 1.11 -> 1.15 -->
 			<dependency> 
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>1.15</version>
+                <version>1.17.1</version>
             </dependency>
 
             <!-- should probably replace this with JSoup these days -->
@@ -268,7 +269,7 @@
 			<dependency>
 				<groupId>com.mchange</groupId>
 				<artifactId>c3p0</artifactId>
-				<version>0.9.5.5</version><!--  was 0.9.5-pre10 -->
+				<version>0.10.1</version><!--  was 0.9.5.5 -->
 			</dependency>
 			
 			<dependency>
@@ -293,7 +294,7 @@
 	            <plugin>
 	                <groupId>org.apache.maven.plugins</groupId>
 	                <artifactId>maven-compiler-plugin</artifactId>
-	                <version>3.11.0</version>
+	                <version>3.13.0</version>
 	                <configuration>
 	                    <source>${jdk.version}</source>
 	                    <target>${jdk.version}</target>
@@ -328,7 +329,7 @@
                           <server>github-release-token</server>
                           <tagName>v${project.version}</tagName>
                           <name>v${project.version}</name>
-                          <targetCommitish>main</targetCommitish>
+                          <targetCommitish>${github.release.targetCommitish}</targetCommitish>
                           <releaseNotes>src/site/release-notes.md</releaseNotes>
                         </configuration>
                       </execution>
