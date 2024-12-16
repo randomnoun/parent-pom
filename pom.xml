@@ -16,7 +16,7 @@
         <jdk.version>17</jdk.version>
         <targetJdk>${jdk.version}</targetJdk><!-- required for PMD  -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.springframework.version>5.3.39</org.springframework.version>
+        <org.springframework.version>6.2.1</org.springframework.version>
         <github.release.targetCommitish>master</github.release.targetCommitish><!-- main or master -->
     </properties>
     
