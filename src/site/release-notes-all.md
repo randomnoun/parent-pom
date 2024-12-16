@@ -1,3 +1,9 @@
+# 1.33
+
+## Updates
+
+* Update spring dependencies
+
 # 1.32
 
 ## Updates

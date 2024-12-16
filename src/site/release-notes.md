@@ -1,4 +1,3 @@
 ## Updates
 
-* Update dependencies
-* Release branch property
+* Update spring dependencies
