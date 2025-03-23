@@ -1,3 +1,3 @@
 ## Updates
 
-* Update spring dependencies
+* Jakarta dependencies

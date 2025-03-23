@@ -1,3 +1,9 @@
+# 1.35
+
+## Updates
+
+* Jakarta dependencies
+
 # 1.33
 
 ## Updates
